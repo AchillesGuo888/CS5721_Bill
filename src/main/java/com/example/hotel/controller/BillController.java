@@ -36,7 +36,8 @@ public class BillController {
   public ResponseResult<Boolean> payRoomBill(
       @ApiParam(value = "bill detail", required = true) @RequestBody PayBillRequestDTO requestDTO) {
     try {
-      return ResponseResult.ofSuccess(billService.payBill(requestDTO));
+      ResponseResult.ofSuccess(billService.payBill(requestDTO));
+      return ResponseResult.ofSuccess(true);
     } catch (BizException e) {
       log.error("user login error", e);
       return ResponseResult.ofError(e.getCode().getCode(), e.getMessage());

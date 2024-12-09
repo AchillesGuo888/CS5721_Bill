@@ -130,13 +130,14 @@ public class BillServiceImpl implements BillService {
     paymentResponse.setCurrency(requestDTO.getCurrency());
     paymentResponse.setTransactionId("TXN" + ThreadLocalRandom.current().nextInt(9));
     //Randomly generate payment results
-    int randomValue = ThreadLocalRandom.current().nextInt(2);
-    if (randomValue > 0) {
-      paymentResponse.setMessage("Payment successful");
-      paymentResponse.setStatus("successful");
-    } else {
-      paymentResponse.setMessage("Insufficient account balance or incorrect information");
-      paymentResponse.setStatus("failed");
-    }
+//    int randomValue = ThreadLocalRandom.current().nextInt(2);
+//    if (randomValue > 0) {
+//
+//    } else {
+//      paymentResponse.setMessage("Insufficient account balance or incorrect information");
+//      paymentResponse.setStatus("failed");
+//    }
+    paymentResponse.setMessage("Payment successful");
+    paymentResponse.setStatus("successful");
   }
 }
